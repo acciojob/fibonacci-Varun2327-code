@@ -1,5 +1,25 @@
 function fibonacci(num) {
-// your code here
+  if (num === 1) return 0;
+  if (num === 2) return 1;
+
+  let a = 0, b = 1;
+  for (let i = 3; i <= num; i++) {
+    let temp = a + b;
+    a = b;
+    b = temp;
+  }
+  return b;
 }
 
-module.exports = fibonacci;
+function showFibonacci() {
+  const input = document.getElementById("num").value;
+  const n = parseInt(input);
+
+  if (isNaN(n) || n < 1 || n > 50) {
+    document.getElementById("result").textContent = "Please enter a number between 1 and 50.";
+    return;
+  }
+
+  const result = fibonacci(n);
+  document.getElementById("result").textContent = `Fibonacci(${n}) = ${result}`;
+}
