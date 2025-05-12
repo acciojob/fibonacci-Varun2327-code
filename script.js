@@ -1,23 +1,15 @@
-function mincost(arr) {
-    // Min heap using simple array with sorting
-    let heap = [...arr].sort((a, b) => a - b); // initialize min-heap
+function fibonacci(num) {
+    if (num === 0) return 0;
+    if (num === 1) return 0;
+    if (num === 2) return 1;
 
-    let totalCost = 0;
-
-    while (heap.length > 1) {
-        // Always take two smallest ropes
-        let first = heap.shift();
-        let second = heap.shift();
-
-        let cost = first + second;
-        totalCost += cost;
-
-        // Insert the new rope back into the heap
-        heap.push(cost);
-        heap.sort((a, b) => a - b); // Re-sort to maintain min-heap behavior
+    let a = 0, b = 1;
+    for (let i = 3; i <= num; i++) {
+        let temp = a + b;
+        a = b;
+        b = temp;
     }
-
-    return totalCost;
+    return b;
 }
 
-module.exports = mincost;
+module.exports = fibonacci;
