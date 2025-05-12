@@ -10,15 +10,3 @@ function fibonacci(num) {
   }
   return b;
 }
-
-function showFibonacci() {
-  const input = document.getElementById("num").value;
-  const n = parseInt(input);
-
-  if (isNaN(n) || n < 1 || n > 50) {
-    document.getElementById("result").textContent = "";
-    return;
-  }
-
-  document.getElementById("result").textContent = fibonacci(n);
-}
