@@ -16,10 +16,9 @@ function showFibonacci() {
   const n = parseInt(input);
 
   if (isNaN(n) || n < 1 || n > 50) {
-    document.getElementById("result").textContent = "Please enter a number between 1 and 50.";
+    document.getElementById("result").textContent = "";
     return;
   }
 
-  const result = fibonacci(n);
-  document.getElementById("result").textContent = `Fibonacci(${n}) = ${result}`;
+  document.getElementById("result").textContent = fibonacci(n);
 }
